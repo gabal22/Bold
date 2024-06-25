@@ -65,8 +65,12 @@
         input{
             position: absolute;
             opacity: 0;
+            &:checked + label span{
+                background: $blue;
+            }
         }
         label{
+            cursor: pointer;
             span{
                 width: 14px;
                 height: 14px;
@@ -75,6 +79,7 @@
                 border-radius: 2px;
                 vertical-align: bottom;
                 margin-right: .7rem;
+                cursor: pointer;
             }
         }
     }

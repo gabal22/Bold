@@ -1,3 +1,5 @@
+import { SiMastercard, SiVisa } from "react-icons/si";
+
 export const dataTable = [
     {
         'status': 'success',
@@ -36,3 +38,15 @@ export const dataTable = [
         'payment': '15.000'
     }
 ]
+
+
+export const cards = {
+    visa: <SiVisa />,
+    mastercard: <SiMastercard />
+}
+
+export const titles = {
+    today: 'Tus ventas de hoy',
+    week: 'Tus ventas de la semana',
+    month: 'Tus ventas de Septiembre'
+}   

@@ -1,19 +1,20 @@
 import React, { useState } from 'react'
 import Filter from './Filter'
+import { useData } from '../context/dataContext'
 
 const Tabs = () => {
-    const [ tabSelected, SetTabSelected ] = useState('today')
+    const { tab, setTab } = useData()
 
     const handleChange = (tab) => {
-        SetTabSelected(tab)
+      setTab(tab)
     }
 
   return (
     <div className='tabs'>
         <ul className="tabs-nav">
-            <li onClick={() => handleChange('today')} className={`${tabSelected == 'today' ? 'active' : ''}`}>Hoy</li>
-            <li onClick={() => handleChange('week')} className={`${tabSelected == 'week' ? 'active' : ''}`}>Esta semana</li>
-            <li onClick={() => handleChange('month')} className={`${tabSelected == 'month' ? 'active' : ''}`}>Septiembre</li>
+            <li onClick={() => handleChange('today')} className={`${tab == 'today' ? 'active' : ''}`}>Hoy</li>
+            <li onClick={() => handleChange('week')} className={`${tab== 'week' ? 'active' : ''}`}>Esta semana</li>
+            <li onClick={() => handleChange('month')} className={`${tab == 'month' ? 'active' : ''}`}>Septiembre</li>
         </ul>
         <Filter />
     </div>
