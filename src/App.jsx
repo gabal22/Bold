@@ -3,6 +3,7 @@ import Header from './components/Header'
 import TotalSales from './components/TotalSales'
 import Tabs from './components/Tabs'
 import Table from './components/Table'
+import { dataTable } from './utils/data'
 
 import './styles/styles.scss'
 
@@ -18,7 +19,7 @@ function App() {
           <Tabs />
         </div>
         <div className="bottom-content">
-            <Table />
+            <Table data={dataTable} />
         </div>
       </div>
     </>

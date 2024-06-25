@@ -1,6 +1,16 @@
 import React from 'react'
+import { IoIosLink } from "react-icons/io";
+import { LuCalculator } from "react-icons/lu";
+import { SiMastercard, SiVisa } from "react-icons/si";
 
-const Table = () => {
+const cards = {
+    visa: <SiVisa />,
+    mastercard: <SiMastercard />
+}
+
+const Table = (props) => {
+    const { data } = props;
+
   return (
     <table className='data-table'>
         <caption>Tus ventas de Hoy</caption>
@@ -14,20 +24,15 @@ const Table = () => {
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>1Cobro exitoso</td>
-                <td>04/06/2020 - 17:14:24</td>
-                <td>**** **** **** 7711</td>
-                <td>GZEN2378UBV2</td>
-                <td>$25.000</td>
-            </tr>
-            <tr>
-                <td>2Cobro exitoso</td>
-                <td>04/06/2020 - 17:14:24</td>
-                <td>**** **** **** 7711</td>
-                <td>GZEN2378UBV2</td>
-                <td>$25.000</td>
-            </tr>
+            {data ? data.map((a) => (
+                <tr key={a.id}>
+                    <td className={a.status}>{a.type == 'datafono' ? <LuCalculator /> : <IoIosLink />} {a.status == 'success' ? 'Cobro exitoso' : 'Cobro no realizado'}</td>
+                    <td>{a.date} - {a.time}</td>
+                    <td>{cards[a.method.card]}{a.method.number}</td>
+                    <td>{a.id}</td>
+                    <td>{a.payment}</td>
+                </tr>
+            )): <h3>Sin informacion</h3>}
         </tbody>
     </table>
   )

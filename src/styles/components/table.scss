@@ -22,20 +22,31 @@
         font-weight: 500;
         color: $black;
         min-width: 150px;
-        padding: 1rem;
+        padding: 1rem 1.4rem;
         border-bottom: 1px solid $light-gray;
     }
 
     tbody{
         td{
             color: lighten($dark-gray, 21%);
-            padding: 1rem;
+            padding: 1.4rem;
             border-bottom: 1px solid $light-gray;
+            svg{
+                width: 18px;
+                height: 18px;
+                margin-right: .7rem;
+                vertical-align: bottom;
+            }
         }
         tr td:first-of-type{
             color: $blue;
             font-weight: 500;
-            border-left: 2px solid $dark-gray;
+           &.success{
+                border-left: 4px solid $blue;
+           }
+           &.failure{
+                border-left: 4px solid lighten($dark-gray, 28%);
+            }
         }
         tr td:last-of-type{
             color: $blue;
