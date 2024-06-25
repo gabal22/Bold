@@ -1,0 +1,43 @@
+.total-sales{
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: rgba($black, 0.15) 1.95px 1.95px 2.6px;
+    background: $white;
+    width: 100%;
+    max-width: 350px;
+    margin-bottom: 1.4rem;
+
+    @include element('header'){
+        color: $white;
+        padding: 1rem .8rem;
+        background: linear-gradient(90deg, $blue -28%, lighten($red, 7%) 134%);
+        h4{
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    @include element('content'){
+        text-align: center;
+        padding: 2.1rem;
+        h3{
+            font-weight: 700;
+            font-size: 28px;
+            margin-bottom: .5rem;
+            background: #121FCF;
+            background: linear-gradient(90deg, $blue -28%, lighten($red, 7%) 134%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+}
+
+.top-content{
+    @include bp('md'){
+        display: flex;
+        justify-content: space-between;
+        .tabs{
+            width: 63%;
+        }
+    }
+}

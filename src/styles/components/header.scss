@@ -1,0 +1,42 @@
+header{
+    background: linear-gradient(90deg, $blue 42%, $red 156%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.7rem 1.2rem 0.7rem 0.2rem;
+    color: $white;
+    margin-bottom: 2.1rem;
+
+    @include bp('md'){
+        padding: 1rem 2.8rem 1rem .7rem;
+    }
+    
+    .header{
+        @include element('logo'){
+            filter: brightness(42);
+            width: 84px;
+
+            @include bp('md'){
+                width: 140px;
+            }
+        }
+
+        @include element('nav'){
+            width: 50%;
+            ul{
+                display: flex;
+                justify-content: space-between;
+                svg{
+                    vertical-align: bottom;
+                }
+            }
+
+            @include bp('md'){
+                width: auto;
+                li:not(:first-of-type){
+                    margin-left: 3.5rem;
+                }
+            }
+        }
+    }
+}

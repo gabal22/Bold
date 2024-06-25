@@ -1,0 +1,15 @@
+// ABSTRACTS
+@import './abstracts/mixins';
+@import './abstracts/variables';
+@import './abstracts/typography';
+
+//BASE
+@import './base/reset';
+
+//COMPONENTS
+
+@import './components/header';
+@import './components/totalSales';
+@import './components/tabs';
+@import './components/filter';
+@import './components/table';

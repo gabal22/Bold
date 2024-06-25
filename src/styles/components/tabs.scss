@@ -1,0 +1,22 @@
+.tabs-nav{
+    background: $white;
+    color: $blue;
+    font-weight: 500;
+    padding: .3rem;
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+
+    li{
+        border-radius: 40px;
+        width: calc(100% / 3);
+        text-align: center;
+        padding: .3rem 0;
+        cursor: pointer;
+        &.active{
+            background: rgba($blue, .3);
+            font-weight: 600;
+        }
+    }
+}

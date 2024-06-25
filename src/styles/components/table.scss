@@ -1,0 +1,45 @@
+.data-table{
+    border-collapse: collapse;
+    width: 100%;
+    border-radius: 7px;
+    overflow: hidden;
+    background: $white;
+    text-align: left;
+
+    caption{
+        background: linear-gradient(90deg, $blue 63%, $red 156%);
+        color: $white;
+        padding: .7rem;
+        text-align: left;
+        
+        @include bp('md'){
+            font-size: 18px;
+        }
+    }
+
+    thead th{
+        font-size: 13px;
+        font-weight: 500;
+        color: $black;
+        min-width: 150px;
+        padding: 1rem;
+        border-bottom: 1px solid $light-gray;
+    }
+
+    tbody{
+        td{
+            color: lighten($dark-gray, 21%);
+            padding: 1rem;
+            border-bottom: 1px solid $light-gray;
+        }
+        tr td:first-of-type{
+            color: $blue;
+            font-weight: 500;
+            border-left: 2px solid $dark-gray;
+        }
+        tr td:last-of-type{
+            color: $blue;
+            font-weight: 500;
+        }
+    }
+}
